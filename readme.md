@@ -1,8 +1,53 @@
 
+This is a wayfinding app built with Laravel PHP and Ember.js
+It requires PHP 5.4+, MySql and Composer to be installed
+
+PHP extensions required -- mcrypt, openssl, mbstring, tokenizer, json
+
+
+It allows for 'locations' to be tied to 'listings' of people or businesses.  Each listing has other available information fields like name phone number email etc. Each location can have multiple 'kiosks' associated with it, these are added in an array inside the ember application controller and then referenced by a url query parameter 'kiosk'. The default is 1.
+
+# example:  
+kiosk: [1,2] 
+
+to reference kiosk 2 the url should be 'http://localhost:4200?kiosk=2'
 
 
 
-# front-end
+
+
+
+# Database
+the database name should be AWSA_wayfinding
+
+# Installation
+
+`composer update`
+`php artisan migrate:install`
+`php artisan migrate`
+
+then restore database from backup
+
+#Development
+follow the above steps with an optional `php artisan db:seed` to seed the database with dummy data
+
+`php artisan serve --host 0.0.0.0` will serve a local instance of laravel on port 8000
+
+#in app_front_end
+
+`npm install`
+`bower install`
+`ember server --proxy http://localhost:8000`
+
+your application will now be running on localhost:4200
+
+
+
+
+
+## Ember Specific Readme
+
+# Awsa-front-end
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -54,6 +99,8 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
 
 
 
