@@ -1,0 +1,41 @@
+{{outlet}}
+
+{{ admin-header newItemRoute='admin.maps.new' title='Map Images' search='search' }}
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Location Name</th>
+			<th>Images</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		{{#each model as |location|}}
+		
+			<tr>
+				<td>{{ location.location }}</td>
+				<td>
+					{{#each location.images as |image|}}
+					
+					<a href="{{ image }}" target="_blank">
+						<div class="thumbnail col-xs-4">
+							<img src="{{ image }}" alt="map">
+						</div>
+					</a>
+
+					{{/each}}
+
+				</td>
+				<td>
+					{{#link-to 'admin.maps.edit' location.location class="btn btn-primary"}}edit{{/link-to}}
+				</td>
+				<td>{{ delete-button delete='delete' model=location}}</td>
+			</tr>
+
+		{{/each}}
+	</tbody>
+
+</table>

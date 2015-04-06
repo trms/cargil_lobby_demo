@@ -1,0 +1,27 @@
+<h3>Create a new Location</h3>
+
+
+<form {{ action 'submitName' _newName model on='submit'}}>
+	<div class="form-group">
+
+		<label>Location Name</label>
+		{{ input value=_newName class="form-control"}}
+
+	</div>
+	<div class="form-group">
+		<button type='submit' class="btn btn-primary">Set Name</button>
+	</div>
+</form>
+
+{{#if model.firstObject.location }}
+
+	{{#each model as |map|}}
+
+	{{ map-form model=map }}
+
+	{{/each}}
+
+	<button {{ action 'save' model}} class="btn btn-success">Save Maps</button>
+
+	
+{{/if }}

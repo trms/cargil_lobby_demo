@@ -1,0 +1,79 @@
+<h1 class="directory-title">Directory</h1>
+
+<div class="compass-rose"><img src="/img/compass_rose.png" alt="comapss rose"></div>
+
+<div class="listing-list">
+	
+	{{ listing-listing isHeader=true }}
+
+	<div class="listings">
+		{{#liquid-with filteredListings as liquidListings class="liquidListings"}}
+
+				{{#each liquidListings as |listing| }}
+					
+						{{ listing-listing model=listing selectListing='selectListing'  }}
+					
+				{{/each}}
+
+		{{/liquid-with}}
+	</div>
+</div>
+
+{{ liquid-outlet class="liquid-listing" }}
+
+{{ directory-map baseMap=baseMap routeMap=routeMap selectedItem=selectedItem }}
+
+
+{{ onscreen-keyboard searchListings='searchListings' open=keyboardIsOpen}}
+
+
+<div class="footer">
+
+
+	<div class="listing-search">
+		
+		{{ input value=listingQuery  action="openKeyboard" on="focus-in" class="keyboard-input" placeholder="search..." }}
+		
+		<button {{ action 'closeKeyboard' }} class="keyboard-close">X</button>
+	</div>
+
+	<div class="map-key">
+		<table>
+			<tr>
+				<td class="map-key-item">
+					<img src="/img/key_restroom.png" alt="restrooms" class="key-image">
+					<span class="key-text">Restrooms</span>
+				</td>
+				<td class="map-key-item">
+					<img src="/img/key_green.png" alt="green" class="key-image">
+					<span class="key-text">Suite 101</span>
+				</td>
+				<td class="map-key-item">
+					<img src="/img/key_blue.png" alt="" class="key-image">
+					<span class="key-text">Suite 103</span>
+				</td>
+				<td class="map-key-item">
+				<img src="/img/key_orange.png" alt="" class="key-image">
+					<span class="key-text">Suite 202</span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="map-key-item">
+				<img src="/img/key_stairs.png" alt="" class="key-image">
+					<span class="key-text">Stairs</span>
+			</td>
+				<td class="map-key-item">
+					<img src="/img/key_yellow.png" alt="" class="key-image">
+					<span class="key-text">Suite 102</span>
+				</td>
+				<td class="map-key-item">
+					<img src="/img/key_light_blue.png" alt="" class="key-image">
+					<span class="key-text">Suite 201</span>
+				</td>
+				<td class="map-key-item"></td>
+			</tr>
+		</table>	
+	</div>
+
+</div>

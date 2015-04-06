@@ -1,0 +1,28 @@
+.map-container{
+	position: absolute;
+	top:5%;
+	right:5%;
+	width: 65%;
+
+	.map{
+		position: absolute;
+		width: 100%;
+	}
+
+	.base-map{
+		z-index: 1;
+	}
+	.route-map{
+		z-index: 2;
+		opacity:0;
+		transition: opacity 1s;
+
+		&.selected{
+			opacity:1;
+		}
+	}
+}
+
+.liquid-map{
+	z-index: 10;
+}

@@ -1,0 +1,11 @@
+<div class="map-container">
+
+	{{!-- {{#liquid-if selectedItem class='liquid-map' }} --}}
+		<img src="{{ routeMap }}" alt="route map" class="route-map map {{ selectedClass }}">
+
+		{{!-- {{ else }} --}}
+		<img src="{{ baseMap }}" alt="base map" class="base-map map">
+	{{!-- {{/liquid-if}} --}}
+	<img src="{{ baseMap }}" alt="base map" class="base-map map">
+
+</div>

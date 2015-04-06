@@ -1,0 +1,44 @@
+{{outlet}}
+
+
+{{ admin-header newItemRoute='admin.listings.new' title='Directory Listings' search='search' }}
+
+
+<div class="row">
+    	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Title</th>
+				<th>Location</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+
+			{{#each model as |listing|}}
+				
+				<tr>
+					<td>{{#link-to 'admin.listings.show' listing.id}}{{ listing.displayName }}{{/link-to}}</td>
+					{{#if listing.title}}
+						<td>{{ listing.title }}</td>
+					{{ else }}
+						<td>{{ listing.description }}</td>
+					{{/if}}
+					<td>{{ listing.location }}</td>
+					<td>{{#link-to 'admin.listings.edit' listing.id class="btn btn-primary"}}edit{{/link-to}}</td>
+					<td>{{ delete-button delete='delete' model=listing}}</td>
+				</tr>
+
+			{{/each}}
+			
+		</tbody>
+		
+	</table>
+
+</div>
+
+

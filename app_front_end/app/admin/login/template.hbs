@@ -1,0 +1,21 @@
+
+<div class="login-form col-xs-10 col-md-6">
+	
+	<form {{ action 'login' on='submit' }} class="form">
+		
+		<div class="form-group">
+			<label for="username">Email</label>
+			{{ input value=email class="form-control" }}
+		</div>
+		
+		<div class="form-group">	
+			<label for="password">Password</label>
+			{{ input type="password" value=password class="form-control" }}
+		</div>
+		
+		<button type='submit' class="btn btn-success">Log In</button>
+
+	</form>
+</div>
+
+

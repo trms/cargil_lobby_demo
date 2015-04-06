@@ -1,0 +1,20 @@
+{{yield}}
+
+<!-- Admin Heading -->
+<div class="row">
+    <div class="col-lg-12">
+    
+	        <h1 class="page-header">
+	            {{ title }}
+
+	            {{#if newItemRoute}}
+		    		{{#link-to newItemRoute class="btn btn-success pull-right"}}Create New{{/link-to}}
+	            {{/if}}
+	        </h1>
+
+    	{{#if hasSearch}}
+	        {{ search-form search='search'}}
+    	{{/if}}
+
+    </div>
+</div>

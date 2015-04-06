@@ -1,0 +1,19 @@
+.listing-list{
+	display: inline-block;
+	position: relative;
+	width: 27%;
+	z-index: 11;
+	overflow:hidden;
+	border-bottom:4px solid $blue;
+
+	.listings{
+		max-height: 560px;
+		overflow-y:scroll;
+		margin-right:-20px;
+	}
+}
+
+
+.liquid-container{
+	overflow:visible !important;
+}

@@ -1,0 +1,35 @@
+{{outlet}}
+
+{{ admin-header newItemRoute='admin.users.new' title='Users' search='search' }}
+
+
+<div class="row">
+    	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+
+			{{#each model as |user|}}
+				
+				<tr>
+					<td>{{ user.name }}</td>
+					<td>{{ user.email }}</td>
+					<td>{{#link-to 'admin.users.edit' user.id class="btn btn-primary"}}edit{{/link-to}}</td>
+					<td>{{ delete-button delete='delete' model=user}}</td>
+				</tr>
+
+			{{/each}}
+			
+		</tbody>
+		
+	</table>
+
+</div>

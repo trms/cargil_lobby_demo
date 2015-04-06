@@ -1,0 +1,80 @@
+<form {{ action 'save' model on="submit"}} class="form" files='true'>
+	
+	<div {{ bind-attr class=":form-group model.errors.displayName:has-error" }}>
+		<label class="control-label" for="firstName">First Name {{ model.errors.displayName }}</label> 
+		{{ input value=model.firstName class="form-control" }}
+	</div>
+
+	<div {{ bind-attr class=":form-group model.errors.displayName:has-error" }}>
+		<label class="control-label" for="lastName">Last Name {{ model.errors.displayName }}</label>
+		{{ input value=model.lastName class="form-control" type="text"}}
+	</div>
+
+	<div {{ bind-attr class=":form-group model.errors.displayName:has-error" }}>
+		<label for="company" class="control-label">Company Name {{ model.errors.displayName }}</label>
+		{{ input value=model.company class="form-control" type="text"}}
+	</div>
+
+	<div class="form-group">
+		<label for="title">Title</label>
+		{{ input value=model.title class="form-control" type="text"}}
+	</div>
+	
+	<div class="form-group">
+		<label for="location">Suite Number</label>
+		{{ view "select" content=locations
+						optionValuePath="content.location"
+						optionLabelPath="content.location"
+						valueBinding="model.location"
+						prompt="Select a Suite:"
+						 }}
+
+						 
+						
+	</div>
+
+	{{!-- <div class="form-group">
+		<label for="address">Address</label>
+		{{ input value=model.address class="form-control" type="text"}}
+	</div>
+
+	<div {{ bind-attr class=":form-group model.errors.email:has-error" }}>
+		<label for="email">Email</label>
+		{{ input value=model.email class="form-control" type="text"}}
+	</div>
+
+	<div {{ bind-attr class=":form-group model.errors.phone:has-error" }}>
+		<label for="phone">Phone Number</label>
+		{{ input value=model.phone class="form-control" type="text"}}
+	</div> --}}
+
+	<div class="form-group">
+		<label for="description">Description Text</label>
+		{{ textarea value=model.description class="form-control" spellcheck=true}}
+	</div> 
+
+	<div class="form-group">
+		<label for="image">Headshot</label>
+		
+
+		{{ file-upload url="api/images/listing" model=model}}
+		{{!-- {{ input name="image" type="file" class="form-control" }} --}}
+		{{#if model.image}}
+			<div class="col-sm-3 col-xs-3 col-lg-2">
+				<div class="thumbnail">
+					<img src="{{ model.image }}">
+					<div class="caption">
+						<button class="btn btn-xs btn-danger"  {{ action 'removeImage' model }}>remove</button>
+					</div>
+				</div>
+			</div>
+		{{/if}}
+	</div>
+
+	
+
+	<div class="form-group">
+		<input type="submit" value="Submit" class="btn btn-primary form-control">
+	</div>
+
+</form>

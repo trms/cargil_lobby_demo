@@ -1,0 +1,101 @@
+
+
+
+.listing{
+	
+	margin:.2em 0;
+	background-color: $white;
+	color:$blue;
+	
+	&:nth-child(odd){
+		// background-color: $white-transparent;
+	}
+
+	.listing-button{
+		padding: .7em 1em;
+		text-decoration: none;
+		display: block;
+		color:$blue;
+
+		&.active{
+			background-color: $dark-blue-transparent;
+			color:white;
+		}
+	}
+
+	.name{
+		display: inline-block;
+		width:70%;
+	}
+
+	.location{
+		display: inline-block;
+		width: 25%;
+		white-space: nowrap;
+		text-align: center;
+	}
+
+	&.listing-header{
+		background-color:$blue;
+		color:white;
+		font-size: 1.2em;
+		padding: .5em 1em;
+	}
+
+	&.open{
+		overflow:hidden;
+		z-index: 10000;
+		position: relative;
+		max-width:25%;
+		min-width:250px;
+		padding:1.5em .5em .5em .5em;
+		background-color: white;
+		box-shadow:5px 5px 15px $black-transparent;
+		border-radius:.5em;
+
+		.name{
+			width:100%;
+			color:$dark-grey;
+			margin:0 0 .2em .1em;
+			font-size: 1.4em;
+			font-weight: bold;
+		}
+
+		.info{
+			font-size: .8em;
+			color:$light-grey;
+			margin:0 0 2.3em .5em;
+		}
+		.thumb{
+			display: inline-block;
+			width:25%;
+
+			.image{
+				width:100%;
+			}
+		}
+
+		.close-button{
+			position: absolute;
+			right:.5%;
+			bottom:.5%;
+			
+		}
+	}
+}
+
+.liquid-listing{
+	position: absolute;
+	top: 3%;
+	left: 30%;
+	width: 100%;
+	z-index: 1000;
+	.liquid-child{
+
+	}
+}
+
+.admin .listing{
+	z-index: 1;
+}
+

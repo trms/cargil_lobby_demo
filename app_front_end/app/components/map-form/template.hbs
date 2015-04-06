@@ -1,0 +1,23 @@
+
+	
+	<div {{ bind-attr class=":form-group model.errors.image:has-error" }}>
+		
+		<label class="control-label">Upload image for location <b>{{ model.location }}</b> on kiosk {{ model.kiosk }} {{ model.errors.image }}</label>
+		
+		{{ file-upload url="api/images/map" model=model}}
+		
+		{{#if model.image}}
+		  <div class="col-xs-2 thumbnail">
+			  <img src="{{ model.image }}" alt="">
+			  {{#if edit}}
+			  <div class="caption">
+			    {{ delete-button model=model delete='delete' }}
+			  </div>
+			  {{/if}}
+		  </div>
+		  <div class="clearfix"></div>
+		{{/if}}
+
+	</div>
+
+

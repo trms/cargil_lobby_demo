@@ -1,0 +1,30 @@
+<form {{ action 'save' user on="submit" }} class="form">
+	
+
+	<div {{ bind-attr class=":form-group user.errors.name:has-error" }}>
+		<label class="control-label" for="name">User Name: {{ user.errors.name }}</label> 
+		{{ input value=user.name class="form-control" }}
+	</div>
+
+	<div {{ bind-attr class=":form-group user.errors.email:has-error" }}>
+		<label class="control-label" for="email">User Email: {{ user.errors.email }}</label> 
+		{{ input value=user.email class="form-control" }}
+	</div>
+
+	{{#unless user.nopassword}}
+		<div {{ bind-attr class=":form-group user.errors.password:has-error" }}>
+			<label class="control-label" for="password">User Password: {{ user.errors.password }}</label> 
+			{{ input type="password" value=user.password class="form-control" }}
+		</div>
+
+		<div {{ bind-attr class=":form-group user.errors.passwordMatch:has-error" }}>
+			<label class="control-label" for="password2">Verify Password: {{ user.errors.passwordMatch }}</label> 
+			{{ input type="password" value=user.password2 class="form-control" }}
+		</div>
+	{{/unless}}
+		
+	<div class="form-group">
+		<input type="submit" value="Submit" class="btn btn-primary form-control">
+	</div>
+		
+</form>

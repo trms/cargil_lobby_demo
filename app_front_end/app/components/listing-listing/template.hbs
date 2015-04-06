@@ -1,0 +1,59 @@
+
+{{#if isHeader}}
+	<div>
+		<span class="name">Name</span>
+		<span class="location">Location</span>
+	</div>
+{{else}}
+
+{{#liquid-with model as model }}
+
+
+
+
+	{{#if isSelected class="listing-animate"}}
+		
+		<div>
+			<p class="name">{{ model.displayName }}</p>
+
+			<p class="info">
+				<span class="info-title">{{ model.title }}</span>
+				<br>
+				<span class="info-location">{{ model.location }}</span>
+
+				{{#if model.fullName}}
+					<br>
+					<span class="info-company">Association: {{ model.company }}</span>
+				{{/if}}
+				{{#if model.description}}
+					<br>
+					<span class="info-description">{{ model.description }}</span>
+				{{/if}}
+			</p>
+			{{#if model.image}}
+				<div class="thumb"><img src="{{ model.image }}"  class="image"></div>
+			{{/if}}
+			
+			{{#link-to 'home.directory' }}
+				<div class="bordered-button close-button" >	
+					<div class="bordered-button-inner">Close</div>
+				</div>
+			{{/link-to}}
+
+		</div>
+
+	{{else}}
+		{{!-- {{#link-to 'home.directory.listing' model.id class="listing-button"}} --}}
+
+		<div class="listing-button" {{ action 'selectListing' model}}>
+				<div class="name">{{ model.displayName }}</div>
+				<div class="location">{{ model.location }}</div>
+		</div>
+
+
+		{{!-- {{/link-to}} --}}
+
+	{{/if}}
+{{/liquid-with}}
+
+{{/if}}

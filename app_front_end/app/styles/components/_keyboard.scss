@@ -1,0 +1,104 @@
+
+.keyboard-container{
+	z-index: 10;
+	position: absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width: 100%;
+	background-color: $black-transparent;
+	font-size:1.3em;
+	opacity:0;
+	transition: opacity 1s;
+	// display:none;
+	z-index:-10000;
+	&.open{
+		// display: block;
+		z-index: 10;
+		top:0;
+		left:0;
+		opacity:1;
+	}
+	.keyboard-background{
+		height:100%;
+		width:100%;
+		position: absolute;
+		right:0;
+		top:0;
+
+		.keyboard-anchor{
+			height:100%;
+			width:70%;
+			position: absolute;
+			right:1%;
+			top:0;
+		}
+	}
+	.keyboard-input{
+		display:none;
+	}
+}
+
+.keyboard-input{
+	font-size:1.5em;
+	border-radius:.3em;
+	border:none;
+	padding:.1em .5em;
+	background-color:$white-transparent;
+	color:$dark-grey;
+	border:1px solid $light-grey;
+	&:focus{
+		outline:none;
+	}
+	&.ui-keyboard-input-current{
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+.keyboard-close{
+	position: relative;
+	left:-2.2em;
+	top:-.2em;
+	font-size:1em;
+	color:white;
+	border-radius: .5em;
+	border:none;
+	width:1.7em;
+	height:1.7em;
+	&:focus{
+		outline:none;
+	}
+}
+
+.ui-keyboard-button{
+	  font-size: 2em;
+	  min-width:1em;
+	  width: 1.3em;
+	  height: 1.3em;
+	  padding: 0;
+	  line-height: 0;
+	  margin: 0.1em;
+	  background-color: $orange;
+	  color:white;
+	  border-radius: .2em;
+	  border:none;
+
+
+	&.ui-keyboard-clear{
+		width: auto;
+		padding:0 .5em;
+		background-color: $red;
+	}
+
+	&.ui-keyboard-bksp{
+		width:auto;
+		padding:0 .5em;
+		background-color: $red;
+	}
+
+	&.ui-keyboard-space{
+		width:8em;
+		padding:.7em;
+	}
+}
