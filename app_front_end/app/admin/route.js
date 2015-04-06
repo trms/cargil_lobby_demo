@@ -22,7 +22,11 @@ export default Ember.Route.extend({
 				this.transitionTo('admin.login');
 			});
 		}
+
+
 	},
+
+	
 
 	actions:{
 		logOut:function(){

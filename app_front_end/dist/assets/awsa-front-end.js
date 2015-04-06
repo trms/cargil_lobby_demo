@@ -2346,42 +2346,6 @@ define('awsa-front-end/admin/template', ['exports'], function (exports) {
           hasRendered: false,
           build: function build(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("Slideshow Images");
-            dom.appendChild(el0, el1);
-            return el0;
-          },
-          render: function render(context, env, contextualElement) {
-            var dom = env.dom;
-            dom.detectNamespace(contextualElement);
-            var fragment;
-            if (env.useFragmentCache && dom.canClone) {
-              if (this.cachedFragment === null) {
-                fragment = this.build(dom);
-                if (this.hasRendered) {
-                  this.cachedFragment = fragment;
-                } else {
-                  this.hasRendered = true;
-                }
-              }
-              if (this.cachedFragment) {
-                fragment = dom.cloneNode(this.cachedFragment, true);
-              }
-            } else {
-              fragment = this.build(dom);
-            }
-            return fragment;
-          }
-        };
-      }());
-      var child3 = (function() {
-        return {
-          isHTMLBars: true,
-          revision: "Ember@1.11.1",
-          blockParams: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          build: function build(dom) {
-            var el0 = dom.createDocumentFragment();
             var el1 = dom.createTextNode("Backup Data");
             dom.appendChild(el0, el1);
             return el0;
@@ -2409,7 +2373,7 @@ define('awsa-front-end/admin/template', ['exports'], function (exports) {
           }
         };
       }());
-      var child4 = (function() {
+      var child3 = (function() {
         return {
           isHTMLBars: true,
           revision: "Ember@1.11.1",
@@ -2481,17 +2445,7 @@ define('awsa-front-end/admin/template', ['exports'], function (exports) {
           var el4 = dom.createTextNode("\n                        ");
           dom.appendChild(el3, el4);
           dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n\n                        ");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createElement("li");
-          var el4 = dom.createTextNode("\n                            ");
-          dom.appendChild(el3, el4);
-          var el4 = dom.createComment("");
-          dom.appendChild(el3, el4);
-          var el4 = dom.createTextNode("\n                        ");
-          dom.appendChild(el3, el4);
-          dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n\n                        ");
+          var el3 = dom.createTextNode("\n\n\n                        ");
           dom.appendChild(el2, el3);
           var el3 = dom.createElement("li");
           var el4 = dom.createTextNode("\n                            ");
@@ -2546,12 +2500,10 @@ define('awsa-front-end/admin/template', ['exports'], function (exports) {
           var morph1 = dom.createMorphAt(dom.childAt(element0, [3]),1,1);
           var morph2 = dom.createMorphAt(dom.childAt(element0, [5]),1,1);
           var morph3 = dom.createMorphAt(dom.childAt(element0, [7]),1,1);
-          var morph4 = dom.createMorphAt(dom.childAt(element0, [9]),1,1);
           block(env, morph0, context, "link-to", ["admin.listings"], {}, child0, null);
           block(env, morph1, context, "link-to", ["admin.maps"], {}, child1, null);
-          block(env, morph2, context, "link-to", ["admin.slides"], {}, child2, null);
-          block(env, morph3, context, "link-to", ["admin.backup"], {}, child3, null);
-          block(env, morph4, context, "link-to", ["admin.users"], {}, child4, null);
+          block(env, morph2, context, "link-to", ["admin.backup"], {}, child2, null);
+          block(env, morph3, context, "link-to", ["admin.users"], {}, child3, null);
           return fragment;
         }
       };
