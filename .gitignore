@@ -4,10 +4,7 @@
 
 
 
-public/img/listings/*
-!public/img/listings/default.png
-public/img/maps/*
-!public/img/maps/default.png
+
 
 public/backup/*
 !public/backup/0default.png
