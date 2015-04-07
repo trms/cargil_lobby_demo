@@ -40,7 +40,7 @@ export default Ember.Controller.extend({
 
 		var listingQuery = this.get('listingQuery');
 
-		var query = new RegExp(listingQuery,'i');
+		var query = new RegExp('\\b'+listingQuery,'i');
 
 		var original = this.get('model');
 
