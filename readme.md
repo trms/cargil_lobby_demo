@@ -2,7 +2,7 @@
 This is a wayfinding app built with Laravel PHP and Ember.js
 It requires PHP 5.4+, MySql and Composer to be installed
 
-PHP extensions required -- mcrypt, openssl, mbstring, tokenizer, json
+PHP extensions required -- mcrypt, openssl, mbstring, tokenizer, fileinfo
 
 
 It allows for 'locations' to be tied to 'listings' of people or businesses.  Each listing has other available information fields like name phone number email etc. Each location can have multiple 'kiosks' associated with it, these are added in an array inside the ember application controller and then referenced by a url query parameter 'kiosk'. The default is 1.
