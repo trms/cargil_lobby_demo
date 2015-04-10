@@ -27,7 +27,7 @@ class UpdateDescriptionToText extends Migration {
 	{
 		Schema::table('listings', function($table)
 		{
-		    $table->string('description')->change();
+		    $table->string('description')->nullable()->change();
 		});
 	}
 
